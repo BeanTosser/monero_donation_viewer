@@ -8,9 +8,7 @@ import App from "./App";
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <App />
   </StrictMode>,
   rootElement
 );
