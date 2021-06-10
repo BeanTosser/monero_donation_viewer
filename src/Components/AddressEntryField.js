@@ -6,11 +6,8 @@ export default function (props) {
   const [inputIsValid, setInputIsValid] = useState(true);
 
   const changeText = function (event) {
-    setEnteredText(event.value);
-    verifyValidInput(event.value);
-    console.log("AddressIsValid: " + inputIsValid);
-    console.log("Entered value: " + event.value);
-    console.log("enteredText(state): " + enteredText);
+    setEnteredText(event.target.value);
+    verifyValidInput(event.target.value);
   };
 
   const verifyValidInput = function (input) {
