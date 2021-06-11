@@ -1,6 +1,6 @@
 import "./styles.css";
 import AddressEntryField from "./Components/AddressEntryField.js";
-
+import TransactionList from "./Components/TransactionList.js";
 export default function App() {
   return (
     <div className="App">
@@ -8,6 +8,7 @@ export default function App() {
       <br />
       <br />
       <AddressEntryField />
+      <TransactionList />
     </div>
   );
 }

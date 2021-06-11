@@ -12,13 +12,14 @@ export default function (props) {
 
   const verifyValidInput = function (input) {
     if (
-      MoneroUtils.isValidAddress(input, MoneroNetworkType.STAGENET) |
+      MoneroUtils.isValidAddress(input, MoneroNetworkType.MAINNET) |
       (input === "")
     ) {
       // An empty address ("") is always considered valid
       setInputIsValid(true);
     } else {
       setInputIsValid(false);
+      console.log("Invalid input: " + input);
     }
   };
 
