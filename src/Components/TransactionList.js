@@ -7,3 +7,8 @@ export default function (props) {
     </div>
   );
 }
+
+function transactionListItem(props) {
+  //props.time
+  //props.amount
+}
