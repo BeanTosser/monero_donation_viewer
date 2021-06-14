@@ -5,6 +5,21 @@ import WalletInfo from "./Components/WalletInfo.js";
 
 export default function App() {
   const walletBalance = 3.9928;
+  const date = new Date();
+  const donations = [
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1],
+    [date, 1.1]
+  ];
 
   return (
     <div className="App">
@@ -17,7 +32,7 @@ export default function App() {
         numDonations={392}
         largestDonation={1.1}
       />
-      <TransactionList />
+      <TransactionList donations={donations} />
     </div>
   );
 }
