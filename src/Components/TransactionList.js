@@ -2,25 +2,26 @@ import "./css/AddressEntryField.css";
 
 export default function (props) {
   let donationList = transactionListItem(props.donations);
+  console.log("Donation list: " + donationList);
   return (
-    <div className="donation_list">
-      <table>{donationList}</table>
-    </div>
+    <table className="donation_list_table">
+      <tbody>{donationList}</tbody>
+    </table>
   );
 }
 
 function transactionListItem(donations) {
-  console.log("Donations: " + donations);
   const maxLength = 10; //show at most 10 donations
+  let length = donations.length - maxLength;
+  donations = donations.slice(length);
   //props.txList
   //  .time
   //  .amount
-  let donationListElements = [];
-  donationListElements = donations.map((donation) => (
+  let donationListElements = donations.map((donation) => (
     <tr>
-      <td>{donation[0]}</td>
+      <td>{donation[0].toString()}</td>
       <td>{donation[1]}</td>
     </tr>
   ));
-  console.log("donationList elements: " + donationListElements);
+  return donationListElements;
 }
