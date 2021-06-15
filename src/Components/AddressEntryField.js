@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MoneroUtils, MoneroNetworkType } from "monero-javascript";
 
 export default function (props) {
   const [enteredText, setEnteredText] = useState("");
   const [inputIsValid, setInputIsValid] = useState(true);
+
+  const validateAddress = useEffect(function () {}, [enteredText]);
 
   const changeText = function (event) {
     setEnteredText(event.target.value);
