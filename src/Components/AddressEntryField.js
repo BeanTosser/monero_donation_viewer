@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MoneroUtils, MoneroNetworkType } from "monero-javascript";
+import "./css/AddressEntryField.css";
 
 export default function (props) {
   const [enteredText, setEnteredText] = useState("");
   const [inputIsValid, setInputIsValid] = useState(true);
-
-  const validateAddress = useEffect(function () {}, [enteredText]);
 
   const changeText = function (event) {
     setEnteredText(event.target.value);
@@ -13,15 +12,16 @@ export default function (props) {
   };
 
   const verifyValidInput = function (input) {
+    console.log(
+      "Valid? " + MoneroUtils.isValidAddress(input, MoneroNetworkType.MAINNET)
+    );
     if (
-      MoneroUtils.isValidAddress(input, MoneroNetworkType.MAINNET) |
-      (input === "")
+      (input === "") |
+      MoneroUtils.isValidAddress(input, MoneroNetworkType.MAINNET)
     ) {
-      // An empty address ("") is always considered valid
       setInputIsValid(true);
     } else {
       setInputIsValid(false);
-      console.log("Invalid input: " + input);
     }
   };
 
@@ -33,6 +33,7 @@ export default function (props) {
 
   return (
     <textarea
+      className="address_entry_field"
       value={enteredText}
       onChange={changeText}
       placeholder="Enter a valid Monero wallet address"

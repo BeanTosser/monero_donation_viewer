@@ -1,5 +1,10 @@
 .donation_list_table {
   border: 1px solid black;
-  min-width: 150px;
+  min-width: 300px;
   min-height: 200px;
+}
+.address_entry_field {
+  resize: none;
+  min-width: 300px;
+  width: 300px;
 }
