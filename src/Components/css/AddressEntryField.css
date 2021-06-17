@@ -1,7 +1,15 @@
-.donation_list_table {
+table {
   border: 1px solid black;
   min-width: 300px;
   min-height: 200px;
+  border-spacing: 0px;
+}
+td {
+  border: 1px solid black;
+}
+div.adjacent_tables {
+  display: flex;
+  flex-direction: row;
 }
 .address_entry_field {
   resize: none;

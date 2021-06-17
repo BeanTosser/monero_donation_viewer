@@ -4,8 +4,23 @@ import TransactionList from "./Components/TransactionList.js";
 import WalletInfo from "./Components/WalletInfo.js";
 
 export default function App() {
+  const formatDate = function (date) {
+    return (
+      date.getDay() +
+      "/" +
+      date.getMonth() +
+      "/" +
+      date.getFullYear() +
+      " : " +
+      date.getHours() +
+      ":" +
+      date.getMinutes()
+    );
+  };
+
   const walletBalance = 3.9928;
-  const date = new Date();
+  const date = formatDate(new Date());
+
   const donations = [
     [date, 1.1],
     [date, 1.1],
@@ -27,12 +42,15 @@ export default function App() {
       <br />
       <br />
       <AddressEntryField />
-      <WalletInfo
-        donationTotal={3.9382}
-        numDonations={392}
-        largestDonation={1.1}
-      />
-      <TransactionList donations={donations} />
+      <div className="adjacent_tables">
+        <WalletInfo
+          donationTotal={3.9382}
+          numDonations={392}
+          largestDonation={1.1}
+        />
+        <TransactionList donations={donations} />
+      </div>
+      +
     </div>
   );
 }
